@@ -7,8 +7,8 @@
 
 header{
     width: 100vw;
-    
-    background-color: #FDF0D5;
+    background-color: #6ac6ff
+    /* background-color: rgba(102, 155, 188,0.8); */
 }
 
 header div{
@@ -19,36 +19,39 @@ header div{
     
 }
 .logo{
-  max-width: 20vw;
+  max-width: 35%;
 
 }
 
+
+
 .hamburger {
-    border: solid 2px black;
-    border-radius: 10%;
-    display: inline-block;
-    cursor: pointer;
-    padding: 10px;
-  }
+  border-radius: 10%;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
   
-  .line {
-    transition: all 200ms linear;
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    margin: 5px 0;
-  }
+.line {
+  transition: all 200ms linear;
+  width: 3px;
+  height: 3px;
+  background-color: rgba(0, 48, 73,1);
+  margin: 5px 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
   
   /* Animación al hacer hover */
-  .hamburger:hover .line {
-    background-color: #333;
-    
-  }
+  
   
 /* Animación al hacer clic */
   .hamburger.active .line:nth-child(1) {
     transition: all 200ms linear;
     transform: rotate(-45deg) translate(-6px, 5px);
+    border-radius: 30%;
   }
   
   .hamburger.active .line:nth-child(2) {
@@ -59,25 +62,33 @@ header div{
   .hamburger.active .line:nth-child(3) {
     transition: all 200ms linear;
     transform: rotate(45deg) translate(-6px, -5px);
+    border-radius: 30%;
   }
 
   .contenedorMenu{
     display: flex;
     flex-direction: column;
+    
   }
 
   #menu{
     color: white;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 48, 73,0.8);
+    border-radius: 10%;
     list-style:none;
+    margin-right: 2px;
 
   }
   #menu.ocultar {
-    display: none;
+    
+    opacity: 0;
+    z-index: -1;
   }
 
   #menu.mostrar {
-    display:block;
+    opacity: 1;
+    z-index: 2;
+    
   }
 
   li a{
@@ -85,5 +96,47 @@ header div{
     color: white;
     
   }
+/*de 350 px a 480 smartphones*/
+
+@media (min-width: 500px){
+  .logo{
+    max-width: 35%;
+    
+  }
+
+  .line {
+    width: 25px;
+    height: 3px;
+    border-radius: 20%;
+  }
+
+  .hamburger {
+    border: solid 2px rgba(0, 48, 73,1);
+    border-radius: 10%;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* 768 px tablets y dispositivos horizontales*/
+
+@media (min-width: 768px){
+  .logo{
+    max-width: 25%;
+    
+  }
 
   
+}
+
+/* 1024 px portatiles y pc de tamaño medio*/
+/* 1200px pantallas grandes*/
+@media (min-width: 1200px){
+    main section article a img{
+        width: 15%;
+    }
+    
+}
